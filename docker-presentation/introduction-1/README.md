@@ -1,6 +1,6 @@
 ![Docker logo](https://raw.githubusercontent.com/madeinchina/docker-presentation/gh-pages/img/docker_logo.png)
 
-## Docker for Developers - Introduction
+## Docker for Developers - introduction
 
 #### [@hanrenwei](http://twitter.com/hanrenwei)
 ________________________
@@ -42,15 +42,18 @@ ________________________
  - Local development
  - Multi-tier applications
  - PaaS-Platform as a Service, SaaS-Software as a Service
+---
 
 ###### See the [survey results for 2016](https://www.docker.com/survey-2016)
  - Docker provides the software supply chain with agility, control and portability for app development.
 
-![Docker_Supply-chain-V1.5-01.png](https://raw.githubusercontent.com/MadeInChina/markdown/master/docker-presentation/Introduction-1/img/Docker_Supply-chain-V1.5-01.png)
+![Docker_Supply-chain-V1.5-01.png](https://raw.githubusercontent.com/MadeInChina/markdown/master/docker-presentation/introduction-1/img/Docker_Supply-chain-V1.5-01.png)
+
+---
 
  - Docker is delivering quantifiable improvements to application delivery through changing DevOps practices.
  
-![Docker_Survey_DevOps_Alt2-V1.8-01-01.png](https://raw.githubusercontent.com/MadeInChina/markdown/master/docker-presentation/Introduction-1/img/Docker_Survey_DevOps_Alt2-V1.8-01-01.png)
+![Docker_Survey_DevOps_Alt2-V1.8-01-01.png](https://raw.githubusercontent.com/MadeInChina/markdown/master/docker-presentation/introduction-1/img/Docker_Survey_DevOps_Alt2-V1.8-01-01.png)
 
 ---
 
@@ -93,7 +96,7 @@ and communicates back and forth with a Docker daemon.
 
 ### Docker compose
 
-![Docker compose logo](https://raw.githubusercontent.com/madeinchina/markdown/master/docker-presentation/Introduction-1/img/docker_compose.png)
+![Docker compose logo](https://raw.githubusercontent.com/madeinchina/markdown/master/docker-presentation/introduction-1/img/docker_compose.png)
 
 A tool for defining and running complex applications with Docker
 (eg a multi-container application) with a single file.
