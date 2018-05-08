@@ -5,7 +5,7 @@
 #### [@hanrenwei](http://twitter.com/hanrenwei)
 ________________________
 
-###### Get them: [online presentation](http://madeinchina.github.io/docker-presentation/) / [source code](https://github.com/madeinchina/docker-presentation) / [docker image](https://hub.docker.com/r/slamhan/docker-presentation/)
+###### Get them: [online presentation](https://github.com/MadeInChina/markdown/tree/master/docker-presentation/introduction-1) / [source code](https://github.com/MadeInChina/markdown/tree/master/docker-presentation/introduction-1) / [docker image](https://hub.docker.com/r/slamhan/docker-presentation/)
 
 ###### Under [Attribution 4.0 International](http://creativecommons.org/licenses/by/4.0/) license.
 
