@@ -2,50 +2,20 @@
 
 ## Docker for Developers - Introduction
 
-#### [Python Meetup Thessaloniki](http://www.meetup.com/PyThess/), 15 April 2016
-
-###### [madeinchina.com](http://www.madeinchina.com/en) / [@theoploumis](http://twitter.com/theoploumis)
+#### [@hanrenwei](http://twitter.com/hanrenwei)
 ________________________
 
-###### Get them: [online presentation](http://madeinchina.github.io/docker-presentation/) / [source code](https://github.com/madeinchina/docker-presentation) / [docker image](https://hub.docker.com/r/tplcom/docker-presentation/)
+###### Get them: [online presentation](http://madeinchina.github.io/docker-presentation/) / [source code](https://github.com/madeinchina/docker-presentation) / [docker image](https://hub.docker.com/r/slamhan/docker-presentation/)
 
 ###### Under [Attribution 4.0 International](http://creativecommons.org/licenses/by/4.0/) license.
 
 ---
 
-### Let me ask you
-
-- Who knows about [Docker](http://docker.com)?
-- Who uses Docker for development?
-- Who uses Docker in production?
-- Who tried but could not do it?
-
----
-
-### What is Docker (v1.11)
+### What is Docker (17.03.0-ce)
 
 > Docker is an open platform for developing, shipping, and running applications.
 
 > Docker allows you to package an application with all of its dependencies into a standardized unit for software development.
-
----
-
-### Docker vs VMs
-
-![Docker vs traditional Virtualization](https://raw.githubusercontent.com/madeinchina/docker-presentation/gh-pages/img/docker_logo.png)
-
----
-
-### Docker History
-
- - Solomon Hykes ([@solomonstre](https://twitter.com/solomonstre))
- - dotCloud (now Docker Inc)
- - March 2013
- - Apache 2.0 license
- - 30k stars on Github
- - 260k public repositories on hub.docker.com
- - Docker Inc acquires everyone <small><sup>TM</sup></small>
- - Docker joins the "[Open Container Initiative](https://www.opencontainers.org/)", June 2015
 
 ---
 
@@ -71,9 +41,16 @@ ________________________
  - Infrastructure configuration
  - Local development
  - Multi-tier applications
- - PaaS, SaaS
+ - PaaS-Platform as a Service, SaaS-Software as a Service
 
 ###### See the [survey results for 2016](https://www.docker.com/survey-2016)
+ - Docker provides the software supply chain with agility, control and portability for app development.
+
+![Docker_Supply-chain-V1.5-01.png](https://raw.githubusercontent.com/madeinchina/docker-presentation/gh-pages/img/Docker_Supply-chain-V1.5-01.png)
+
+ - Docker is delivering quantifiable improvements to application delivery through changing DevOps practices.
+ 
+![Docker_Survey_DevOps_Alt2-V1.8-01-01.png](https://raw.githubusercontent.com/madeinchina/docker-presentation/gh-pages/img/Docker_Survey_DevOps_Alt2-V1.8-01-01.png)
 
 ---
 
