@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <title>reveal-md</title>
+        <link rel="stylesheet" href="./css/reveal.css">
+        <link rel="stylesheet" href="./css/theme/black.css" id="theme">
+        <link rel="stylesheet" href="./css/highlight/zenburn.css">
+        <link rel="stylesheet" href="./css/print/paper.css" type="text/css" media="print">
+
+
+    </head>
+    <body>
+
+        <div class="reveal">
+            <div class="slides"><section  data-markdown><script type="text/template">![Docker logo](data:image/png;base64,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)
+
+## Docker for Developers - Introduction
+
+#### [Python Meetup Thessaloniki](http://www.meetup.com/PyThess/), 15 April 2016
+
+###### [TheodorosPloumis.com](http://www.theodorosploumis.com/en) / [@theoploumis](http://twitter.com/theoploumis)
+________________________
+
+###### Get them: [online presentation](http://theodorosploumis.github.io/docker-presentation/) / [source code](https://github.com/theodorosploumis/docker-presentation) / [docker image](https://hub.docker.com/r/tplcom/docker-presentation/)
+
+###### Under [Attribution 4.0 International](http://creativecommons.org/licenses/by/4.0/) license.
+</script></section><section  data-markdown><script type="text/template">
+### Let me ask you
+
+- Who knows about [Docker](http://docker.com)?
+- Who uses Docker for development?
+- Who uses Docker in production?
+- Who tried but could not do it?
+</script></section><section  data-markdown><script type="text/template">
+```
+cd ~/Docker-presentation
+git clone git@github.com:theodorosploumis/docker-presentation.git
+cd docker-presentation/examples/docker-compose
+
+// Run docker-compose using the docker-compose.yml
+cat docker-compose.yml
+docker-compose up -d
+```
+</script></section><section  data-markdown><script type="text/template">
+### Example: Share a public Image
+
+```
+cd ~/Docker-presentation
+git clone git@github.com:theodorosploumis/docker-presentation.git
+cd docker-presentation
+
+docker pull nimmis/alpine-apache
+docker build -t tplcom/docker-presentation .
+
+// Test it
+docker run -itd --name docker_presentation \
+           -p 8480:80 \
+           tplcom/docker-presentation
+
+// Open http://localhost:8480, you should see this presentation
+
+// Push it on the hub.docker.com
+docker push tplcom/docker-presentation
+```
+</script></section><section  data-markdown><script type="text/template">
+### Example: Export/Save/Load etc
+
+```
+docker pull nimmis/alpine-apache
+docker run -d --name apache_example \
+           nimmis/alpine-apache
+
+// Create a file inside the container.
+// See https://github.com/nimmis/docker-alpine-apache for details.
+docker exec -ti apache_example \
+            /bin/sh -c 'mkdir /test && echo "This is it." >> /test/test.txt'
+
+// Test it. You should see message: "This is it."
+docker exec apache_example cat /test/test.txt
+
+// Commit the change.
+docker commit apache_export_example myapache:latest
+
+// Create a new container with the new image.
+docker run -d --name myapache_example myapache
+
+// You should see the new folder/file inside the myapache_example container.
+docker exec myapache_example cat /test/test.txt
+
+// Export the container as image
+cd ~/Docker-presentation
+docker export myapache_example > myapache_example.tar
+
+// Import a new image from the exported files
+cd ~/Docker-presentation
+docker import myapache_example.tar myapache:new
+
+// Save a new image as tar
+docker save -o ~/Docker-presentation/myapache_image.tar myapache:new
+
+// Load an image from tar file
+docker load < myapache_image.tar
+
+```
+</script></section><section  data-markdown><script type="text/template">
+### Example: GUI with Docker
+
+See examples at [hub.docker.com/u/jess](https://hub.docker.com/u/jess/)
+
+```
+// Before staring we should grant access to everyone on the X Server (locally)
+// Otherwise the containers below will never start and they will not be able to use x11
+xhost +
+
+// Libreoffice
+docker run  -d \
+            -v /etc/localtime:/etc/localtime:ro \
+            -v /tmp/.X11-unix:/tmp/.X11-unix \
+            -e DISPLAY=unix$DISPLAY \
+            -e GDK_SCALE \
+            -e GDK_DPI_SCALE \
+            --name libreoffice \
+            jess/libreoffice
+
+// SublimeText 3
+docker run -it \
+           -v $HOME/.config/sublime-text-3/:/root/.config/sublime-text-3 \
+           -v /tmp/.X11-unix:/tmp/.X11-unix \
+           -e DISPLAY=$DISPLAY \
+           --name sublime_text \
+           jess/sublime-text-3
+
+// Audacity (sound in docker container)
+docker run  -d \
+            -v /etc/localtime:/etc/localtime:ro \
+            -v /tmp/.X11-unix:/tmp/.X11-unix \
+            -e DISPLAY=unix$DISPLAY \
+            -e QT_DEVICE_PIXEL_RATIO \
+            --device /dev/snd \
+            --group-add audio \
+            --name audacity \
+            jess/audacity
+
+// Disable access to x11
+xhost -
+
+```
+</script></section><section  data-markdown><script type="text/template">
+### Docker tips
+
+There are known best practices (see a list at [examples/tips](https://github.com/theodorosploumis/docker-presentation/tree/gh-pages/examples/tips))
+
+- Optimize containers (check [fromlatest.io](https://www.fromlatest.io/) and [imagelayers.io](https://imagelayers.io))
+- Create your own tiny base
+- Containers are not Virtual Machines
+- Full stack Images VS 1 process per Container
+- Create your private registry
+- Create shortcut commands
+- Use docker-compose.yml templates (see why at [lorry.io](https://lorry.io/))
+- Be aware of the hub.docker.com docker agent version
+</script></section><section  data-markdown><script type="text/template">
+### The Docker war
+
+| Type | Software |
+|:----:|----------|
+| Clustering/orchestration | [Swarm](https://docs.docker.com/swarm/), [Kubernetes](http://kubernetes.io/), [Marathon](https://mesosphere.github.io/marathon/), [MaestroNG](https://github.com/signalfx/maestro-ng), [decking](http://decking.io/), [shipyard](http://shipyard-project.com/) |
+| Docker registries | [Portus](http://port.us.org/), [Docker Distribution](https://github.com/docker/distribution), [hub.docker.com](http://hub.docker.com), [quay.io](https://quay.io), [Google container registry](https://cloud.google.com/tools/container-registry/), [Artifactory](https://www.jfrog.com/artifactory/), [projectatomic.io](http://www.projectatomic.io/) |
+| PaaS with Docker | [Rancher](http://rancher.com/), [Tsuru](https://tsuru.io/), [dokku](https://github.com/dokku/dokku), [flynn](https://flynn.io/),  [Octohost](http://octohost.io/), [DEIS](http://deis.io/) |
+| OS made of Containers | [RancherOS](http://rancher.com/rancher-os/) |
+</script></section><section  data-markdown><script type="text/template">
+### Docker Alternatives
+
+- [Rocket, rkt](https://github.com/coreos/rkt)
+- [Linux Containers, LXC](https://linuxcontainers.org/)
+- [Linux container hypervisor, LXD](http://www.ubuntu.com/cloud/lxd)
+- [BSD Jails](https://www.freebsd.org/doc/handbook/jails.html)
+- [Solaris Zones](http://oracle.com/solaris)
+- [drawbridge](http://research.microsoft.com/en-us/projects/drawbridge/)
+</script></section><section  data-markdown><script type="text/template">
+### Instead of Resources
+
+ - [Awesome Docker](https://github.com/veggiemonk/awesome-docker) (list of Docker resources & projects)
+ - [Docker cheat sheet](https://github.com/wsargent/docker-cheat-sheet)
+ - [Docker in Practice](https://www.manning.com/books/docker-in-practice), [The Docker Book](http://www.dockerbook.com/) (books)
+ - [Docker aliases/shortcuts](https://github.com/theodorosploumis/docker-presentation/tree/gh-pages/examples/shortcuts/docker-aliases.sh)
+ - Docker [case studies](https://www.docker.com/customers)
+</script></section><section  data-markdown><script type="text/template">
+### Questions?
+
+![Pythons over Docker!](data:image/png;base64,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)
+
+[Review this presentation](https://goo.gl/lkau9t)
+
+> Next: Docker in production, Scaling, Private registries, PaaS.
+
+###### In this presentation I have used [oh my zsh](http://ohmyz.sh/), [docker 1.11.1](https://github.com/docker/docker/releases/tag/v1.11.1), [wharfee](https://github.com/j-bennet/wharfee) and [dry](https://github.com/moncho/dry).
+</script></section><section  data-markdown><script type="text/template">
+### Bonus!
+
+> Get the [SKGTech.io docker image](https://github.com/skgtech/skgtech.io-docker)
+</script></section></div>
+        </div>
+
+        <script src="./lib/js/head.min.js"></script>
+        <script src="./js/reveal.js"></script>
+
+        <script>
+            function extend() {
+              var target = {};
+              for (var i = 0; i < arguments.length; i++) {
+                var source = arguments[i];
+                for (var key in source) {
+                  if (source.hasOwnProperty(key)) {
+                    target[key] = source[key];
+                  }
+                }
+              }
+              return target;
+            }
+
+            // Optional libraries used to extend on reveal.js
+            var deps = [
+              { src: './lib/js/classList.js', condition: function() { return !document.body.classList; } },
+              { src: './plugin/markdown/marked.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
+              { src: './plugin/markdown/markdown.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
+              { src: './plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+              { src: './plugin/zoom-js/zoom.js', async: true },
+              { src: './plugin/notes/notes.js', async: true },
+              { src: './plugin/math/math.js', async: true }
+            ];
+
+            // default options to init reveal.js
+            var defaultOptions = {
+              controls: true,
+              progress: true,
+              history: true,
+              center: true,
+              transition: 'default', // none/fade/slide/convex/concave/zoom
+              dependencies: deps
+            };
+
+            // options from URL query string
+            var queryOptions = Reveal.getQueryHash() || {};
+
+            var options = {};
+            options = extend(defaultOptions, options, queryOptions);
+        </script>
+
+
+        <script>
+            Reveal.initialize(options);
+        </script>
+    </body>
+</html>
