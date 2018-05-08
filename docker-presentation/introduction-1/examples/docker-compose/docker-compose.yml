@@ -1,0 +1,20 @@
+# Creates a web app with MySQL database
+# Usage: docker-compose up -d
+# Notice that mysql server name is: mysql
+version: "2"
+services:
+  web:
+    image: tomcat:8.5-jre8-slim
+    ports:
+      - "8380:8080"
+  mysql:
+    image: mysql:5.7
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=demo
+      - MYSQL_USER=demo
+      - MYSQL_PASSWORD=password
+    networks:
+      - demonet
+networks:
+  demonet:

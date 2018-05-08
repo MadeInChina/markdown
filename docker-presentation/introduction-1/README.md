@@ -46,11 +46,11 @@ ________________________
 ###### See the [survey results for 2016](https://www.docker.com/survey-2016)
  - Docker provides the software supply chain with agility, control and portability for app development.
 
-![Docker_Supply-chain-V1.5-01.png](https://raw.githubusercontent.com/madeinchina/docker-presentation/gh-pages/img/Docker_Supply-chain-V1.5-01.png)
+![Docker_Supply-chain-V1.5-01.png](https://raw.githubusercontent.com/MadeInChina/markdown/master/docker-presentation/Introduction-1/img/Docker_Supply-chain-V1.5-01.png)
 
  - Docker is delivering quantifiable improvements to application delivery through changing DevOps practices.
  
-![Docker_Survey_DevOps_Alt2-V1.8-01-01.png](https://raw.githubusercontent.com/madeinchina/docker-presentation/gh-pages/img/Docker_Survey_DevOps_Alt2-V1.8-01-01.png)
+![Docker_Survey_DevOps_Alt2-V1.8-01-01.png](https://raw.githubusercontent.com/MadeInChina/markdown/master/docker-presentation/Introduction-1/img/Docker_Survey_DevOps_Alt2-V1.8-01-01.png)
 
 ---
 
@@ -64,13 +64,10 @@ ________________________
  - Control Groups ([cgroups](https://www.wikiwand.com/en/Cgroups))
  - Container format ([libcontainer](https://github.com/opencontainers/runc/tree/master/libcontainer "Libcontainer provides a native Go implementation for creating containers with namespaces, cgroups, capabilities, and filesystem access controls. It allows you to manage the lifecycle of the container performing additional operations after the container is created."))
 
-###### See more at [Understanding docker](https://docs.docker.com/engine/understanding-docker/)
-
 ---
 
 ### The Docker architecture
 
-![Docker architecture](https://docs.docker.com/engine/article-img/architecture.svg)
 ###### See more at [Understanding docker](https://docs.docker.com/engine/understanding-docker/)
 
 ---
@@ -94,81 +91,28 @@ and communicates back and forth with a Docker daemon.
 
 ---
 
-### Docker daemon
-
-It runs on a host machine. The user does not directly interact with the daemon,
-but instead through the Docker client with the RESTful api or sockets.
-
----
-
-### Docker engine
-
-A Client with a Daemon as also as the docker-compose tool. Usually referred simply as "docker".
-
----
-
-### Docker machine
-
-![Docker machine logo](https://raw.githubusercontent.com/madeinchina/docker-presentation/gh-pages/img/docker_machine.png)
-
-A tool which makes it really easy to create Docker hosts on your computer,
-on cloud providers and inside your own data center.
-It creates servers, installs Docker on them, then configures the Docker client to talk to them.
-Required for Mac, Windows users.
-
----
-
 ### Docker compose
 
-![Docker compose logo](https://raw.githubusercontent.com/madeinchina/docker-presentation/gh-pages/img/docker_compose.png)
+![Docker compose logo](https://raw.githubusercontent.com/madeinchina/markdown/master/docker-presentation/Introduction-1/img/docker_compose.png)
 
 A tool for defining and running complex applications with Docker
 (eg a multi-container application) with a single file.
 
 ---
 
-### Docker swarm
-
-![Docker swarm logo](https://raw.githubusercontent.com/madeinchina/docker-presentation/gh-pages/img/docker_swarm.png)
-
-A native clustering tool for Docker. Swarm pools together several Docker
-hosts and exposes them as a single virtual Docker host. It scale up to multiple hosts.
-
----
-
-### Docker distribution
-
-![Docker distribution logo](https://raw.githubusercontent.com/madeinchina/docker-presentation/gh-pages/img/docker_distribution.png)
-
-A (hosted) service containing repositories of images which responds to the Registry API.
-
----
-
 ### Steps of a Docker workflow
 
 ```
-docker run -i -t -d ubuntu:15.04 /bin/bash
+docker run -i -t -d -p 9080:8080 docker.finnplay.net/tomcat:8.5-jre8-slim
 ```
 
- - Pulls the ubuntu:15.04 [image](https://docs.docker.com/engine/userguide/containers/dockerimages/ "A read-only layer that is the base of your container. It can have a parent image to abstract away the more basic filesystem snapshot.") from the [registry](https://docs.docker.com/registry/ "The central place where all publicly published images live. You can search it, upload your images there and when you pull a docker image, it comes the repository/hub.")
+ - Pulls the tomcat:8.5-jre8-slim [image](https://docs.docker.com/engine/userguide/containers/dockerimages/ "A read-only layer that is the base of your container. It can have a parent image to abstract away the more basic filesystem snapshot.") from the [registry](https://docs.docker.com/registry/ "The central place where all publicly published images live. You can search it, upload your images there and when you pull a docker image, it comes the repository/hub.")
  - Creates a new [container](https://docs.docker.com/engine/userguide/storagedriver/imagesandcontainers/ "A runnable instance of the image, basically it is a process isolated by docker that runs on top of the filesystem that an image provides.")
  - Allocates a filesystem and mounts a read-write [layer](https://docs.docker.com/engine/reference/glossary/#filesystem "A set of read-only files to provision the system. Think of a layer as a read only snapshot of the filesystem.")
  - Allocates a [network/bridge interface](https://www.wikiwand.com/en/Bridging_%28networking%29 "")
  - Sets up an [IP address](https://www.wikiwand.com/en/IP_address "An Internet Protocol address (IP address) is a numerical label assigned to each device (e.g., computer, printer) participating in a computer network that uses the Internet Protocol for communication.")
- - Executes a process that you specify (``` /bin/bash ```)
+ - Executes a process that you specify
  - Captures and provides application output
-
----
-
-### The docker image
-
-![ubuntu:15.04 image](https://docs.docker.com/engine/userguide/storagedriver/images/image-layers.jpg "A read-only layer that is the base of your container. It can have a parent image to abstract away the more basic filesystem snapshot. Each Docker image references a list of read-only layers that represent filesystem differences. Layers are stacked on top of each other to form a base for a container’s root filesystem.")
-
----
-
-### The docker container
-
-![container using ubuntu:15.04 image](https://docs.docker.com/engine/userguide/storagedriver/images/container-layers.jpg "A runnable instance of the image, basically it is a process isolated by docker that runs on top of the filesystem that an image provides. For each containers there is a new, thin, writable layer - container layer - on top of the underlying stack (image).")
 
 ---
 
@@ -176,9 +120,8 @@ docker run -i -t -d ubuntu:15.04 /bin/bash
 
 > A Dockerfile is a text document that contains all the commands a user could call on the command line to create an image.
 
- - [Dockerfile with inline comments](https://github.com/madeinchina/docker-presentation/blob/gh-pages/examples/dockerfile/Dockerfile) just for education
+ - [Dockerfile](https://github.com/madeinchina/markdown/master/docker-presentation/introduction-1/examples/dockerfile/Dockerfile)
  - [Dockerfile reference](https://docs.docker.com/engine/reference/builder/) on docker docs
- - Official Dockerfiles ([rails](https://github.com/docker-library/rails/blob/master/Dockerfile), [nodejs](https://github.com/ReadyTalk/nodejs-docker/blob/master/base/Dockerfile), [django](https://github.com/docker-library/django/blob/master/3.4/Dockerfile), [Drupal](https://github.com/docker-library/drupal/blob/master/8.1/fpm/Dockerfile))
 
 ---
 
@@ -186,7 +129,6 @@ docker run -i -t -d ubuntu:15.04 /bin/bash
 
 ```
 // General info
-man docker // man docker-run
 docker help // docker help run
 docker info
 docker version
