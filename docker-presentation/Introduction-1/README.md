@@ -1,13 +1,13 @@
-![Docker logo](https://raw.githubusercontent.com/theodorosploumis/docker-presentation/gh-pages/img/docker_logo.png)
+![Docker logo](https://raw.githubusercontent.com/madeinchina/docker-presentation/gh-pages/img/docker_logo.png)
 
 ## Docker for Developers - Introduction
 
 #### [Python Meetup Thessaloniki](http://www.meetup.com/PyThess/), 15 April 2016
 
-###### [TheodorosPloumis.com](http://www.theodorosploumis.com/en) / [@theoploumis](http://twitter.com/theoploumis)
+###### [madeinchina.com](http://www.madeinchina.com/en) / [@theoploumis](http://twitter.com/theoploumis)
 ________________________
 
-###### Get them: [online presentation](http://theodorosploumis.github.io/docker-presentation/) / [source code](https://github.com/theodorosploumis/docker-presentation) / [docker image](https://hub.docker.com/r/tplcom/docker-presentation/)
+###### Get them: [online presentation](http://madeinchina.github.io/docker-presentation/) / [source code](https://github.com/madeinchina/docker-presentation) / [docker image](https://hub.docker.com/r/tplcom/docker-presentation/)
 
 ###### Under [Attribution 4.0 International](http://creativecommons.org/licenses/by/4.0/) license.
 
@@ -32,7 +32,7 @@ ________________________
 
 ### Docker vs VMs
 
-![Docker vs traditional Virtualization](https://raw.githubusercontent.com/theodorosploumis/docker-presentation/gh-pages/img/docker_logo.png)
+![Docker vs traditional Virtualization](https://raw.githubusercontent.com/madeinchina/docker-presentation/gh-pages/img/docker_logo.png)
 
 ---
 
@@ -132,7 +132,7 @@ A Client with a Daemon as also as the docker-compose tool. Usually referred simp
 
 ### Docker machine
 
-![Docker machine logo](https://raw.githubusercontent.com/theodorosploumis/docker-presentation/gh-pages/img/docker_machine.png)
+![Docker machine logo](https://raw.githubusercontent.com/madeinchina/docker-presentation/gh-pages/img/docker_machine.png)
 
 A tool which makes it really easy to create Docker hosts on your computer,
 on cloud providers and inside your own data center.
@@ -143,7 +143,7 @@ Required for Mac, Windows users.
 
 ### Docker compose
 
-![Docker compose logo](https://raw.githubusercontent.com/theodorosploumis/docker-presentation/gh-pages/img/docker_compose.png)
+![Docker compose logo](https://raw.githubusercontent.com/madeinchina/docker-presentation/gh-pages/img/docker_compose.png)
 
 A tool for defining and running complex applications with Docker
 (eg a multi-container application) with a single file.
@@ -152,7 +152,7 @@ A tool for defining and running complex applications with Docker
 
 ### Docker swarm
 
-![Docker swarm logo](https://raw.githubusercontent.com/theodorosploumis/docker-presentation/gh-pages/img/docker_swarm.png)
+![Docker swarm logo](https://raw.githubusercontent.com/madeinchina/docker-presentation/gh-pages/img/docker_swarm.png)
 
 A native clustering tool for Docker. Swarm pools together several Docker
 hosts and exposes them as a single virtual Docker host. It scale up to multiple hosts.
@@ -161,7 +161,7 @@ hosts and exposes them as a single virtual Docker host. It scale up to multiple 
 
 ### Docker distribution
 
-![Docker distribution logo](https://raw.githubusercontent.com/theodorosploumis/docker-presentation/gh-pages/img/docker_distribution.png)
+![Docker distribution logo](https://raw.githubusercontent.com/madeinchina/docker-presentation/gh-pages/img/docker_distribution.png)
 
 A (hosted) service containing repositories of images which responds to the Registry API.
 
@@ -199,7 +199,7 @@ docker run -i -t -d ubuntu:15.04 /bin/bash
 
 > A Dockerfile is a text document that contains all the commands a user could call on the command line to create an image.
 
- - [Dockerfile with inline comments](https://github.com/theodorosploumis/docker-presentation/blob/gh-pages/examples/dockerfile/Dockerfile) just for education
+ - [Dockerfile with inline comments](https://github.com/madeinchina/docker-presentation/blob/gh-pages/examples/dockerfile/Dockerfile) just for education
  - [Dockerfile reference](https://docs.docker.com/engine/reference/builder/) on docker docs
  - Official Dockerfiles ([rails](https://github.com/docker-library/rails/blob/master/Dockerfile), [nodejs](https://github.com/ReadyTalk/nodejs-docker/blob/master/base/Dockerfile), [django](https://github.com/docker-library/django/blob/master/3.4/Dockerfile), [Drupal](https://github.com/docker-library/drupal/blob/master/8.1/fpm/Dockerfile))
 
@@ -337,11 +337,11 @@ docker inspect -f "{{ .HostConfig.Links }}" drupal_example
 
 ### Example: Using Docker Compose
 
-Let's create a Drupal app with [docker-compose.yml](https://github.com/theodorosploumis/docker-presentation/blob/gh-pages/examples/docker-compose/docker-compose.yml)
+Let's create a Drupal app with [docker-compose.yml](https://github.com/madeinchina/docker-presentation/blob/gh-pages/examples/docker-compose/docker-compose.yml)
 
 ```
 cd ~/Docker-presentation
-git clone git@github.com:theodorosploumis/docker-presentation.git
+git clone git@github.com:madeinchina/docker-presentation.git
 cd docker-presentation/examples/docker-compose
 
 // Run docker-compose using the docker-compose.yml
@@ -355,7 +355,7 @@ docker-compose up -d
 
 ```
 cd ~/Docker-presentation
-git clone git@github.com:theodorosploumis/docker-presentation.git
+git clone git@github.com:madeinchina/docker-presentation.git
 cd docker-presentation
 
 docker pull nimmis/alpine-apache
@@ -463,7 +463,7 @@ xhost -
 
 ### Docker tips
 
-There are known best practices (see a list at [examples/tips](https://github.com/theodorosploumis/docker-presentation/tree/gh-pages/examples/tips))
+There are known best practices (see a list at [examples/tips](https://github.com/madeinchina/docker-presentation/tree/gh-pages/examples/tips))
 
 - Optimize containers (check [fromlatest.io](https://www.fromlatest.io/) and [imagelayers.io](https://imagelayers.io))
 - Create your own tiny base
@@ -503,14 +503,14 @@ There are known best practices (see a list at [examples/tips](https://github.com
  - [Awesome Docker](https://github.com/veggiemonk/awesome-docker) (list of Docker resources & projects)
  - [Docker cheat sheet](https://github.com/wsargent/docker-cheat-sheet)
  - [Docker in Practice](https://www.manning.com/books/docker-in-practice), [The Docker Book](http://www.dockerbook.com/) (books)
- - [Docker aliases/shortcuts](https://github.com/theodorosploumis/docker-presentation/tree/gh-pages/examples/shortcuts/docker-aliases.sh)
+ - [Docker aliases/shortcuts](https://github.com/madeinchina/docker-presentation/tree/gh-pages/examples/shortcuts/docker-aliases.sh)
  - Docker [case studies](https://www.docker.com/customers)
 
 ---
 
 ### Questions?
 
-![Pythons over Docker!](https://raw.githubusercontent.com/theodorosploumis/docker-presentation/gh-pages/img/docker_logo.png)
+![Pythons over Docker!](https://raw.githubusercontent.com/madeinchina/docker-presentation/gh-pages/img/docker_logo.png)
 
 [Review this presentation](https://goo.gl/lkau9t)
 
