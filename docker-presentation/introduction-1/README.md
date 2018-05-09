@@ -1,4 +1,4 @@
-![Docker logo](https://raw.githubusercontent.com/madeinchina/docker-presentation/gh-pages/img/docker_logo.png)
+![Docker logo](https://raw.githubusercontent.com/MadeInChina/markdown/master/docker-presentation/introduction-1/img/docker_logo.png)
 
 ## Docker for Developers - introduction
 
@@ -118,12 +118,8 @@ docker rm [CONTAINER]
 - SSH into a container
 - Build an image
 - Docker [Volume](https://docs.docker.com/engine/userguide/containers/dockervolumes/)
-- [Linked](https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks/) containers
 - Using [docker-compose](https://docs.docker.com/compose/)
 - Scale containers with docker-compose
-- Share an image (share this presentation)
-- Package an app with its environment
-- Screen and sound within containers (x-forward)
 
 ---
 
@@ -193,96 +189,9 @@ docker-compose up -d
 
 ---
 
-### Example: Export/Save/Load etc
-
-```
-docker pull nimmis/alpine-apache
-docker run -d --name apache_example \
-           nimmis/alpine-apache
-
-// Create a file inside the container.
-// See https://github.com/nimmis/docker-alpine-apache for details.
-docker exec -ti apache_example \
-            /bin/sh -c 'mkdir /test && echo "This is it." >> /test/test.txt'
-
-// Test it. You should see message: "This is it."
-docker exec apache_example cat /test/test.txt
-
-// Commit the change.
-docker commit apache_export_example myapache:latest
-
-// Create a new container with the new image.
-docker run -d --name myapache_example myapache
-
-// You should see the new folder/file inside the myapache_example container.
-docker exec myapache_example cat /test/test.txt
-
-// Export the container as image
-cd ~/Docker-presentation
-docker export myapache_example > myapache_example.tar
-
-// Import a new image from the exported files
-cd ~/Docker-presentation
-docker import myapache_example.tar myapache:new
-
-// Save a new image as tar
-docker save -o ~/Docker-presentation/myapache_image.tar myapache:new
-
-// Load an image from tar file
-docker load < myapache_image.tar
-
-```
-
----
-
-### Example: GUI with Docker
-
-See examples at [hub.docker.com/u/jess](https://hub.docker.com/u/jess/)
-
-```
-// Before staring we should grant access to everyone on the X Server (locally)
-// Otherwise the containers below will never start and they will not be able to use x11
-xhost +
-
-// Libreoffice
-docker run  -d \
-            -v /etc/localtime:/etc/localtime:ro \
-            -v /tmp/.X11-unix:/tmp/.X11-unix \
-            -e DISPLAY=unix$DISPLAY \
-            -e GDK_SCALE \
-            -e GDK_DPI_SCALE \
-            --name libreoffice \
-            jess/libreoffice
-
-// SublimeText 3
-docker run -it \
-           -v $HOME/.config/sublime-text-3/:/root/.config/sublime-text-3 \
-           -v /tmp/.X11-unix:/tmp/.X11-unix \
-           -e DISPLAY=$DISPLAY \
-           --name sublime_text \
-           jess/sublime-text-3
-
-// Audacity (sound in docker container)
-docker run  -d \
-            -v /etc/localtime:/etc/localtime:ro \
-            -v /tmp/.X11-unix:/tmp/.X11-unix \
-            -e DISPLAY=unix$DISPLAY \
-            -e QT_DEVICE_PIXEL_RATIO \
-            --device /dev/snd \
-            --group-add audio \
-            --name audacity \
-            jess/audacity
-
-// Disable access to x11
-xhost -
-
-```
-
----
-
 ### Docker tips
 
-There are known best practices (see a list at [examples/tips](https://github.com/madeinchina/docker-presentation/tree/gh-pages/examples/tips))
+There are known best practices (see a list at [examples/tips](https://github.com/MadeInChina/markdown/blob/master/docker-presentation/introduction-1/examples/tips))
 
 - Optimize containers (check [fromlatest.io](https://www.fromlatest.io/) and [imagelayers.io](https://imagelayers.io))
 - Create your own tiny base
@@ -290,55 +199,20 @@ There are known best practices (see a list at [examples/tips](https://github.com
 - Full stack Images VS 1 process per Container
 - Create your private registry
 - Create shortcut commands
-- Use docker-compose.yml templates (see why at [lorry.io](https://lorry.io/))
+- Use docker-compose.yml templates
 - Be aware of the hub.docker.com docker agent version
-
 ---
-
-### The Docker war
-
-| Type | Software |
-|:----:|----------|
-| Clustering/orchestration | [Swarm](https://docs.docker.com/swarm/), [Kubernetes](http://kubernetes.io/), [Marathon](https://mesosphere.github.io/marathon/), [MaestroNG](https://github.com/signalfx/maestro-ng), [decking](http://decking.io/), [shipyard](http://shipyard-project.com/) |
-| Docker registries | [Portus](http://port.us.org/), [Docker Distribution](https://github.com/docker/distribution), [hub.docker.com](http://hub.docker.com), [quay.io](https://quay.io), [Google container registry](https://cloud.google.com/tools/container-registry/), [Artifactory](https://www.jfrog.com/artifactory/), [projectatomic.io](http://www.projectatomic.io/) |
-| PaaS with Docker | [Rancher](http://rancher.com/), [Tsuru](https://tsuru.io/), [dokku](https://github.com/dokku/dokku), [flynn](https://flynn.io/),  [Octohost](http://octohost.io/), [DEIS](http://deis.io/) |
-| OS made of Containers | [RancherOS](http://rancher.com/rancher-os/) |
-
+### Continuous Delivery: Jenkins pipeline
+![Docker logo](https://raw.githubusercontent.com/madeinchina/docker-presentation/gh-pages/img/ci-cd.png)
+- How?
 ---
+### Example: Using Docker Compose
 
-### Docker Alternatives
-
-- [Rocket, rkt](https://github.com/coreos/rkt)
-- [Linux Containers, LXC](https://linuxcontainers.org/)
-- [Linux container hypervisor, LXD](http://www.ubuntu.com/cloud/lxd)
-- [BSD Jails](https://www.freebsd.org/doc/handbook/jails.html)
-- [Solaris Zones](http://oracle.com/solaris)
-- [drawbridge](http://research.microsoft.com/en-us/projects/drawbridge/)
-
----
-
-### Instead of Resources
-
- - [Awesome Docker](https://github.com/veggiemonk/awesome-docker) (list of Docker resources & projects)
- - [Docker cheat sheet](https://github.com/wsargent/docker-cheat-sheet)
- - [Docker in Practice](https://www.manning.com/books/docker-in-practice), [The Docker Book](http://www.dockerbook.com/) (books)
- - [Docker aliases/shortcuts](https://github.com/madeinchina/docker-presentation/tree/gh-pages/examples/shortcuts/docker-aliases.sh)
- - Docker [case studies](https://www.docker.com/customers)
 
 ---
 
 ### Questions?
 
-![Pythons over Docker!](https://raw.githubusercontent.com/madeinchina/docker-presentation/gh-pages/img/docker_logo.png)
 
-[Review this presentation](https://goo.gl/lkau9t)
-
-> Next: Docker in production, Scaling, Private registries, PaaS.
-
-###### In this presentation I have used [oh my zsh](http://ohmyz.sh/), [docker 1.11.1](https://github.com/docker/docker/releases/tag/v1.11.1), [wharfee](https://github.com/j-bennet/wharfee) and [dry](https://github.com/moncho/dry).
-
+###### In this presentation I have used [oh my zsh](http://ohmyz.sh/), [docker 17.03.0-ce](https://github.com/docker/docker/releases/tag/v17.03.0-ce), [wharfee](https://github.com/j-bennet/wharfee) and [dry](https://github.com/moncho/dry).
 ---
-
-### Bonus!
-
-> Get the [SKGTech.io docker image](https://github.com/skgtech/skgtech.io-docker)
