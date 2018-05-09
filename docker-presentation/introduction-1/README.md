@@ -202,9 +202,9 @@ There are known best practices (see a list at [examples/tips](https://github.com
 ---
 ### Continuous Delivery: Jenkins pipeline
 ![CI/CD](https://raw.githubusercontent.com/MadeInChina/markdown/master/docker-presentation/introduction-1/img/ci-cd.png)
-- How?
 ---
 ### Demo
+![CD](https://raw.githubusercontent.com/MadeInChina/markdown/master/docker-presentation/introduction-1/img/cd-process.png)
 
 
 ---
