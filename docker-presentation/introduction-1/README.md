@@ -119,7 +119,6 @@ docker rm [CONTAINER]
 - Build an image
 - Docker [Volume](https://docs.docker.com/engine/userguide/containers/dockervolumes/)
 - Using [docker-compose](https://docs.docker.com/compose/)
-- Scale containers with docker-compose
 
 ---
 
@@ -203,7 +202,7 @@ There are known best practices (see a list at [examples/tips](https://github.com
 - Be aware of the hub.docker.com docker agent version
 ---
 ### Continuous Delivery: Jenkins pipeline
-![Docker logo](https://raw.githubusercontent.com/madeinchina/docker-presentation/gh-pages/img/ci-cd.png)
+![CI/CD](https://raw.githubusercontent.com/MadeInChina/markdown/master/docker-presentation/introduction-1/img/ci-cd.png)
 - How?
 ---
 ### Example: Using Docker Compose
