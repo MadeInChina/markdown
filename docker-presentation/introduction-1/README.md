@@ -34,17 +34,13 @@ ________________________
 
 ###### See the [survey results for 2016](https://www.docker.com/survey-2016)
  - Docker provides the software supply chain with agility, control and portability for app development.
-
 ![Docker_Supply-chain-V1.5-01.png](https://raw.githubusercontent.com/MadeInChina/markdown/master/docker-presentation/introduction-1/img/Docker_Supply-chain-V1.5-01.png)
 
 ---
-
  - Docker is delivering quantifiable improvements to application delivery through changing DevOps practices.
  
 ![Docker_Survey_DevOps_Alt2-V1.8-01-01.png](https://raw.githubusercontent.com/MadeInChina/markdown/master/docker-presentation/introduction-1/img/Docker_Survey_DevOps_Alt2-V1.8-01-01.png)
-
 ---
-
 ### Docker client
 
 It is the primary user interface to Docker. It accepts commands from the user
@@ -213,4 +209,3 @@ There are known best practices (see a list at [examples/tips](https://github.com
 
 
 ###### In this presentation I have used [oh my zsh](http://ohmyz.sh/), [docker 17.03.0-ce](https://github.com/docker/docker/releases/tag/v17.03.0-ce), [wharfee](https://github.com/j-bennet/wharfee) and [dry](https://github.com/moncho/dry).
----
