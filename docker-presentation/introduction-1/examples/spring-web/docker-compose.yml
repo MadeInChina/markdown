@@ -1,0 +1,6 @@
+version: "2"
+services:
+  web:
+    image: docker.finnplay.net/hello-world
+    ports:
+      - "8380:8080"
