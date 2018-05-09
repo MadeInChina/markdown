@@ -16,7 +16,7 @@ pipeline {
             steps {
                dir ('docker-presentation/introduction-1/examples/spring-web') {
                   script {
-                      def app = docker.build 'slamhan/docker-presentation/hello-world:latest'
+                      def app = docker.build 'docker.finnplay.net/hello-world:latest'
                       app.push()
                   }
                 }
