@@ -114,7 +114,6 @@ docker rm [CONTAINER]
 ---
 
 ### Docker examples
-
 - SSH into a container
 - Build an image
 - Docker [Volume](https://docs.docker.com/engine/userguide/containers/dockervolumes/)
@@ -205,7 +204,7 @@ There are known best practices (see a list at [examples/tips](https://github.com
 ![CI/CD](https://raw.githubusercontent.com/MadeInChina/markdown/master/docker-presentation/introduction-1/img/ci-cd.png)
 - How?
 ---
-### Example: Using Docker Compose
+### Demo
 
 
 ---
