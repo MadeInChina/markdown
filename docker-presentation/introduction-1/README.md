@@ -5,7 +5,7 @@
 #### [@hanrenwei](http://twitter.com/hanrenwei)
 ________________________
 
-###### Get them: [online presentation](https://github.com/MadeInChina/markdown/tree/master/docker-presentation/introduction-1) / [source code](https://github.com/MadeInChina/markdown/tree/master/docker-presentation/introduction-1) / [docker image](https://hub.docker.com/r/slamhan/docker-presentation/)
+###### Get them: [online presentation](https://github.com/MadeInChina/markdown/tree/master/docker-presentation/introduction-1) / [source code](https://github.com/MadeInChina/markdown/tree/master/docker-presentation/introduction-1) / [docker image](https://hub.docker.com/)
 
 ###### Under [Attribution 4.0 International](http://creativecommons.org/licenses/by/4.0/) license.
 
@@ -32,18 +32,6 @@ ________________________
 
 ---
 
-### Common Docker usages
-
- - Sandbox environment (develop, test, debug, educate)
- - Continuous Integration & Deployment
- - Scaling apps
- - Development collaboration
- - Infrastructure configuration
- - Local development
- - Multi-tier applications
- - PaaS-Platform as a Service, SaaS-Software as a Service
----
-
 ###### See the [survey results for 2016](https://www.docker.com/survey-2016)
  - Docker provides the software supply chain with agility, control and portability for app development.
 
@@ -54,36 +42,6 @@ ________________________
  - Docker is delivering quantifiable improvements to application delivery through changing DevOps practices.
  
 ![Docker_Survey_DevOps_Alt2-V1.8-01-01.png](https://raw.githubusercontent.com/MadeInChina/markdown/master/docker-presentation/introduction-1/img/Docker_Survey_DevOps_Alt2-V1.8-01-01.png)
-
----
-
-### Technology behind Docker
-
- - Linux [x86-64](https://www.wikiwand.com/en/X86-64)
- - [Go](https://golang.org/) language
- - [Client - Server](https://www.wikiwand.com/en/Client%E2%80%93server_model) (deamon) architecture
- - Union file systems ([UnionFS](https://www.wikiwand.com/en/UnionFS): AUFS, btrfs, vfs etc)
- - [Namespaces](https://en.wikipedia.org/wiki/Cgroups#NAMESPACE-ISOLATION) (pid, net, ipc, mnt, uts)
- - Control Groups ([cgroups](https://www.wikiwand.com/en/Cgroups))
- - Container format ([libcontainer](https://github.com/opencontainers/runc/tree/master/libcontainer "Libcontainer provides a native Go implementation for creating containers with namespaces, cgroups, capabilities, and filesystem access controls. It allows you to manage the lifecycle of the container performing additional operations after the container is created."))
-
----
-
-### The Docker architecture
-
-###### See more at [Understanding docker](https://docs.docker.com/engine/understanding-docker/)
-
----
-
-### Docker components
-
- - (Docker) client
- - daemon
- - engine
- - machine
- - compose
- - swarm
- - registry
 
 ---
 
@@ -115,7 +73,6 @@ docker run -i -t -d -p 9080:8080 docker.finnplay.net/tomcat:8.5-jre8-slim
  - Allocates a [network/bridge interface](https://www.wikiwand.com/en/Bridging_%28networking%29 "")
  - Sets up an [IP address](https://www.wikiwand.com/en/IP_address "An Internet Protocol address (IP address) is a numerical label assigned to each device (e.g., computer, printer) participating in a computer network that uses the Internet Protocol for communication.")
  - Executes a process that you specify
- - Captures and provides application output
 
 ---
 
@@ -173,24 +130,26 @@ docker rm [CONTAINER]
 ### Example: SSH into a container
 
 ```
-docker pull ubuntu
-docker run -it --name ubuntu_example ubuntu /bin/bash
+docker pull docker.finnplay.net/tomcat:8.5-jre8-slim
+docker run -i -t -d -p 9080:8080 docker.finnplay.net/tomcat:8.5-jre8-slim
+docker ps -a
+docker exec -it [container_id] /bin/bash
 ```
 
 ---
 
 ### Example: Build an Image
 
-Let's build a [jenkins image](https://github.com/komljen/dockerfile-examples/blob/master/jenkins/Dockerfile)
+Let's build a [tomcat image](https://github.com/MadeInChina/markdown/blob/master/docker-presentation/introduction-1/examples/dockerfile/Dockerfile)
 
 ```
-cd ~/Docker-presentation
-git clone git@github.com:komljen/dockerfile-examples.git.git
-cd dockerfile-examples/jenkins
-docker build -t jenkins-local .
+cd ~/docker-presentation
+git clone https://github.com/MadeInChina/markdown.git
+cd markdown/docker-presentation/introduction-1/examples/dockerfile
+docker build -t tomcat:8.5-jre8-slim .
 
 // Test it
-docker run -d -p 8099:8080 --name jenkins_example jenkins-local
+docker run -d -p 8099:8080 --name tomcat tomcat:8.5-jre8-slim
 // Open http://localhost:8099
 ```
 
@@ -198,100 +157,38 @@ docker run -d -p 8099:8080 --name jenkins_example jenkins-local
 
 ### Example: Docker volume
 
-Let's use [Apache server](https://bitbucket.org/EdBoraas/apache-docker/src/)
+Let's use [tomcat image](https://github.com/MadeInChina/markdown/blob/master/docker-presentation/introduction-1/examples/dockerfile/Dockerfile)
 
 ```
-cd ~/Docker-presentation
-mkdir apache-example
-cd apache-example
+cd ~/docker-presentation
+mkdir tomcat-example
+cd tomcat-example
 
-docker pull eboraas/apache
-docker run --name apache_volume_example \
-           -p 8180:80 -p 443:443 \
-           -v $(pwd):/var/www/ \
-           -d eboraas/apache
+docker run --name tomcat \
+           -p 8099:8080 \
+           -v $(pwd):/usr/local/tomcat/webapps/demo \
+           -d tomcat:8.5-jre8-slim
 
 // Locally create an index.html file
-mkdir html
-cd html
 echo "It works using mount." >> index.html
 
-// Open http://localhost:8180 to view the html file
-```
-
----
-
-### Example: Docker link containers
-
-Let's create a [Drupal app](https://hub.docker.com/_/drupal/) (apache, php, mysql, drupal)
-
-```
-cd ~/Docker-presentation
-mkdir drupal-link-example
-cd drupal-link-example
-
-docker pull drupal:8.0.6-apache
-docker pull mysql:5.5
-
-// Start a container for mysql
-docker run --name mysql_example \
-           -e MYSQL_ROOT_PASSWORD=root \
-           -e MYSQL_DATABASE=drupal \
-           -e MYSQL_USER=drupal \
-           -e MYSQL_PASSWORD=drupal \
-           -d mysql:5.5
-
-// Start a Drupal container and link it with mysql
-// Usage: --link [name or id]:alias
-docker run -d --name drupal_example \
-           -p 8280:80 \
-           --link mysql_example:mysql \
-           drupal:8.0.6-apache
-
-// Open http://localhost:8280 to continue with the installation
-// On the db host use: mysql
-
-// There is a proper linking
-docker inspect -f "{{ .HostConfig.Links }}" drupal_example
+// Open http://localhost:8099/demo/index.html to view the html file
 ```
 
 ---
 
 ### Example: Using Docker Compose
 
-Let's create a Drupal app with [docker-compose.yml](https://github.com/madeinchina/docker-presentation/blob/gh-pages/examples/docker-compose/docker-compose.yml)
+Let's create a tomcat and mysql app with [docker-compose.yml](https://github.com/MadeInChina/markdown/blob/master/docker-presentation/introduction-1/examples/docker-compose/docker-compose.yml)
 
 ```
-cd ~/Docker-presentation
-git clone git@github.com:madeinchina/docker-presentation.git
-cd docker-presentation/examples/docker-compose
+cd ~/docker-presentation
+git clone https://github.com/MadeInChina/markdown.git
+cd markdown/docker-presentation/introduction-1/examples/docker-compose
 
 // Run docker-compose using the docker-compose.yml
 cat docker-compose.yml
 docker-compose up -d
-```
-
----
-
-### Example: Share a public Image
-
-```
-cd ~/Docker-presentation
-git clone git@github.com:madeinchina/docker-presentation.git
-cd docker-presentation
-
-docker pull nimmis/alpine-apache
-docker build -t tplcom/docker-presentation .
-
-// Test it
-docker run -itd --name docker_presentation \
-           -p 8480:80 \
-           tplcom/docker-presentation
-
-// Open http://localhost:8480, you should see this presentation
-
-// Push it on the hub.docker.com
-docker push tplcom/docker-presentation
 ```
 
 ---
