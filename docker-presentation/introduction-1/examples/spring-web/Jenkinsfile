@@ -4,6 +4,9 @@ pipeline {
     tools {
         maven 'maven3.3.9'
     }
+    parameters {
+            string(name: 'VERSION', defaultValue: 'latest', description: 'Which version to build?')
+        }
     stages {
         stage('Build') {
             steps {
@@ -16,7 +19,7 @@ pipeline {
             steps {
                dir ('docker-presentation/introduction-1/examples/spring-web') {
                   script {
-                      def app = docker.build 'docker.finnplay.net/hello-world:latest'
+                      def app = docker.build 'docker.finnplay.net/hello-world:${VERSION}'
                       app.push()
                   }
                 }
